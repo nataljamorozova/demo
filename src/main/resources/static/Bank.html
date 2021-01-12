@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="2" id="tabel">
+        <tr>
+            <td>Nimi</td>
+            <td>Konto</td>
+            <td>Balanss</td>
+            <td>Isikukood</td>
+        </tr>
+        <tr>
+            <td><input id="name"></td>
+            <td><input id="account_nr"></td>
+            <td><input id="balance"></td>
+            <td><input id="id_code"></td>
+        </tr>
+    
+     
+    </table>
+    <pre>   </pre>
+    <div>   </div>
+    <button id="PressMe">Loo konto</button>
+
+    <script>
+    let a=document.getElementById("name");
+    let b=document.getElementById("account_nr");
+    let c=document.getElementById("balance");
+    let d=document.getElementById("id_code");
+    let button=document.getElementById("PressMe");
+
+    button.onclick=function(){
+        fetch('http://localhost:8080/bank/createaccount?name='+a.value+'&account_nr='+b.value+'&balance='+c.value+'&id_code='+d.value);
+    
+    }
+
+    </script>
+
+<pre>   </pre>
+
+ <table border="2" id="tabel">
+    <tr>
+        
+        <td>Konto</td>
+        <td>Balanss</td>
+        
+    </tr>
+    <tr>
+        <td><input id="account_nr1"></td>
+        <td><input id="balanss1"></td>
+    </tr>
+    <button id="PressMe1">Näita konto bilanssi</button>
+    <script>
+    let a1=document.getElementById("account_nr1");
+    let button1=document.getElementById("PressMe1");
+    let vastusFunktsioon=function(resultBody){
+        balanss1.value=resultBody;
+        }
+    button1.onclick=function(){
+        fetch('http://localhost:8080/bank/getAccountBalance?iban='+a1.value).then(result=>result.text()).then(vastusFunktsioon);
+    }
+   console.log(a1);
+
+    </script>
+
+
+   
+</body>
+</html>

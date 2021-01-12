@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet  author="Natalja"  id="2020-12-21 test">
+    </changeSet>
+
+    <changeSet  author="Natalja"  id="2020-12-21 bank">
+        <createTable tableName="bank_account">
+            <column name="id" type="integer">
+                <constraints primaryKey="true"></constraints>
+            </column>
+            <column name="account_nr" type="text">
+                <constraints primaryKey="false"></constraints>
+            </column>
+            <column name="name" type="text">
+                <constraints primaryKey="false"></constraints>
+            </column>
+            <column name="id_code" type="text">
+                <constraints primaryKey="false"></constraints>
+            </column>
+            <column name="balance" type="integer">
+                <constraints primaryKey="false"></constraints>
+            </column>
+        </createTable>
+        
+    </changeSet>
+
+
+
+</databaseChangeLog>

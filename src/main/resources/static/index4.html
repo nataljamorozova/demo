@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="2" id="tabel">
+        <tr>
+            <td><input id="a" type="number"></td>
+            <td><input id="b" type="number"></td>
+        </tr>
+    
+        <button id="PressMe">Arvuta min</button>
+        <div id="vastus">Siia tuleb vastus</div>
+    </table>
+    <script>
+
+        
+        let vastus=document.getElementById("vastus");
+        let vastusFunktsioon=function(resultBody){
+            vastus.innerText=resultBody;
+        }
+        let a=document.getElementById("a");
+        let b=document.getElementById("b");
+        let button=document.getElementById("PressMe");
+
+    button.onclick=function(){
+        fetch('http://localhost:8080/math/min/'+a.value+'/'+b.value).then(result=>result.text()).then(vastusFunktsioon);
+    }
+
+    </script>
+</body>
+</html>

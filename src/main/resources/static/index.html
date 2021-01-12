@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Test</title>
+</head>
+   <body>
+    <h1>Tabel tabel</h1>
+
+   <table border="2" id="tabel">
+       <tr>
+           <td>Kasutaja </td>
+           <td>Parool</td>
+       </tr>
+       <tr>
+           <td> <input type="text"></td>
+           <td><input type="password"></td>
+       </tr>
+       <button id="PressMe"> <input id="number" placeholder="number"></button>
+
+       <script>
+
+       let number=document.getElementById("number");
+       let button = document.getElementById("PressMe");
+       button.onclick=function (){
+
+       for(i=0;i<number.value;i++){
+           let uusRida=document.createElement("tr");
+           let uusTulp=document.createElement("td");
+           uusRida.appendChild(uusTulp);
+           let tabel=document.getElementById("tabel");
+           tabel.appendChild(uusRida);
+}
+}
+       </script>
+   </table>
+       <pre><input type="checkbox">ID kaart  <input type="radio">taotlus
+       </pre>
+     <script>
+         alert('Hello world');
+     </script>
+    <table border="2" id="tabel">
+        <tr>
+            <td><input id="number1" type="number"></td>
+            <td><input id="number2" type="number"></td>
+        </tr>
+        <button id="PressMe1"> kuvatakse välja</button>
+       
+        <table border="2" id="tabel1">  
+        </table>
+     <script>
+         let number1=document.getElementById("number1");
+         let number2=document.getElementById("number2");
+         let button1 = document.getElementById("PressMe1");
+            button1.onclick=function (){
+                
+            for (i=0; i<number1.value; i++){
+              let uusRida=document.createElement("tr");
+            for (j=0;j<number2.value; j++){
+              let uusTulp=document.createElement("td");
+              uusTulp.innerText=(i+1)*(j+1);
+              uusRida.appendChild(uusTulp);
+              let tabel=document.getElementById("tabel1");
+              tabel.appendChild(uusRida);
+    
+                }
+                
+            }
+        }
+     </script>
+
+
+   </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="2" id="tabel">
+        <tr>
+            <td><input id="number" type="number"></td>
+        </tr>
+    </table> 
+        <button id="PressMe">Näita Fibonacci jada</button>
+
+        <table border="2" id="tabel1">  
+
+        </table>
+     <script>
+         let number=document.getElementById("number");
+         let button = document.getElementById("PressMe");
+            button.onclick=function (){
+               let tabel=document.getElementById("tabel1");
+               let uusTulp=document.createElement("td");
+               let array=[];
+               array[0]=0;
+               array[1]=1;
+
+               let uusRida1=document.createElement("tr");
+               uusRida1.innerText=array[0];
+               
+               tabel.appendChild(uusRida1);
+
+               let uusRida2=document.createElement("tr");
+               uusRida2.innerText=array[1];
+               
+               tabel.appendChild(uusRida2);
+
+                   for (i=2; i<number.value; i++){
+                       array[i]=array[i-1]+array[i-2];
+                       let uusRida=document.createElement("tr");
+                        uusRida.innerText=array[i];
+                    
+                        tabel.appendChild(uusRida);
+                }
+                
+            }
+        
+     </script>
+</body>
+</html>

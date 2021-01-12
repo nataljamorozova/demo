@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="2" id="tabel">
+    <tr>
+        <td><input id="number" type="number"></td>
+    </tr>
+</table>
+<button id="PressMe">Näita arvu faktorial</button>
+
+<table border="2" id="tabel1">
+    <tr>
+        <td><input id="vastus" type="number" value="5"></td>
+    </tr>
+</table>
+<script>
+         let number=document.getElementById("number");
+         let button = document.getElementById("PressMe");
+         let factorial=function(x){
+             console.log(x);
+            if (x <= 1) {
+                return 1;
+            } else {
+                return (x * factorial(x - 1));
+            }
+        }   
+         
+            button.onclick=function (){
+                document.getElementById("vastus").value=factorial(number.value);
+
+            }
+
+     </script>
+</body>
+</html>

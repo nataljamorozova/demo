@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="2" id="tabel">
+    <tr>
+        <td>Kasutaja </td>
+        <td>Parool</td>
+    </tr>
+    <tr>
+        <td> <input id ="kasutaja" input type="text"></td>
+        <td> <input id ="parool" input type="password"></td>
+    </tr>
+</table>
+
+<pre>   </pre>
+    <button id="PressMe">Registreeri</button>
+
+
+<script>
+
+
+
+        let a=document.getElementById("kasutaja");
+        let b=document.getElementById("parool");
+        let button=document.getElementById("PressMe");
+
+    button.onclick=function(){
+        let kasutaja={"username":a.value, "password":b.value};
+        fetch('http://localhost:8080/register',{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(kasutaja)})
+    }
+
+    </script>
+</body>
+</html>
